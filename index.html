@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A personal story, made with love." />
+  <title>For You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       CHAPTER INDICATOR (persistent across pages)
+  ═══════════════════════════════════════════ -->
+  <nav class="chapter-nav" id="chapterNav" aria-label="Story chapters">
+    <button class="chapter-dot active" id="dot1" data-page="1" aria-label="Chapter 1: The Surprise">
+      <span class="dot-line"></span>
+      <span class="dot-label">01 — The Surprise</span>
+    </button>
+    <button class="chapter-dot" id="dot2" data-page="2" aria-label="Chapter 2: Our Moments">
+      <span class="dot-line"></span>
+      <span class="dot-label">02 — Our Moments</span>
+    </button>
+    <button class="chapter-dot" id="dot3" data-page="3" aria-label="Chapter 3: A Letter">
+      <span class="dot-line"></span>
+      <span class="dot-label">03 — A Letter</span>
+    </button>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE 1 — THE SURPRISE
+  ═══════════════════════════════════════════ -->
+  <section class="page" id="page1" aria-labelledby="p1-heading">
+
+    <!-- Grain overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Ambient glow blobs -->
+    <div class="ambient-blob blob-1" aria-hidden="true"></div>
+    <div class="ambient-blob blob-2" aria-hidden="true"></div>
+    <div class="ambient-blob blob-3" aria-hidden="true"></div>
+
+    <!-- Floating particles canvas -->
+    <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+    <!-- Parallax content wrapper -->
+    <div class="parallax-wrapper" id="parallaxWrapper">
+      <div class="p1-content">
+        <p class="p1-eyebrow" aria-label="Chapter one">01 / A Little Surprise</p>
+        <h1 class="p1-heading" id="p1-heading">I made something<br><em>for you...</em></h1>
+        <p class="p1-subtext">
+          Not a gift you can hold.<br />
+          Just something I wanted you to keep.
+        </p>
+        <button class="cta-btn" id="startBtn" aria-label="Start the story">
+          <span class="cta-text">Start the story</span>
+          <span class="cta-arrow" aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="scroll-hint" aria-hidden="true">
+      <span class="scroll-line"></span>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE 2 — OUR MOMENTS
+  ═══════════════════════════════════════════ -->
+  <section class="page hidden" id="page2" aria-labelledby="p2-heading">
+
+    <div class="grain-overlay" aria-hidden="true"></div>
+    <div class="ambient-blob blob-4" aria-hidden="true"></div>
+    <div class="ambient-blob blob-5" aria-hidden="true"></div>
+
+    <div class="p2-container">
+
+      <header class="p2-header">
+        <p class="p1-eyebrow">02 / Our Moments</p>
+        <h2 class="p2-heading" id="p2-heading">Us</h2>
+        <p class="p2-subtext">A few moments that live in my chest.</p>
+      </header>
+
+      <!-- Editorial photo grid -->
+      <div class="photo-gallery" id="photoGallery" role="list">
+
+        <!-- Photo 1 — Large hero -->
+        <article class="photo-card photo-hero reveal-item" data-index="0" role="listitem" aria-label="Photo 1">
+          <div class="photo-frame">
+            <img src="images/photo1.jpg" alt="A memory with you" loading="lazy" />
+            <div class="photo-overlay">
+              <span class="photo-icon" aria-hidden="true">⊕</span>
+            </div>
+          </div>
+          <p class="photo-caption">One of my favourite moments.</p>
+        </article>
+
+        <!-- Photo 2 — Polaroid style -->
+        <article class="photo-card photo-polaroid-1 reveal-item" data-index="1" role="listitem" aria-label="Photo 2">
+          <div class="photo-frame">
+            <img src="images/photo2.jpg" alt="A moment I cherish" loading="lazy" />
+            <div class="photo-overlay">
+              <span class="photo-icon" aria-hidden="true">⊕</span>
+            </div>
+          </div>
+          <p class="photo-caption">A memory I never want to forget.</p>
+        </article>
+
+        <!-- Photo 3 — Offset -->
+        <article class="photo-card photo-polaroid-2 reveal-item" data-index="2" role="listitem" aria-label="Photo 3">
+          <div class="photo-frame">
+            <img src="images/photo3.jpg" alt="Us, together" loading="lazy" />
+            <div class="photo-overlay">
+              <span class="photo-icon" aria-hidden="true">⊕</span>
+            </div>
+          </div>
+          <p class="photo-caption">Somewhere between these moments,<br>you became my favourite person.</p>
+        </article>
+
+        <!-- Photo 4 — Accent -->
+        <article class="photo-card photo-accent reveal-item" data-index="3" role="listitem" aria-label="Photo 4">
+          <div class="photo-frame">
+            <img src="images/photo4.jpg" alt="A quiet moment" loading="lazy" />
+            <div class="photo-overlay">
+              <span class="photo-icon" aria-hidden="true">⊕</span>
+            </div>
+          </div>
+          <p class="photo-caption">This one always makes me smile.</p>
+        </article>
+
+      </div><!-- /photo-gallery -->
+
+      <!-- Divider quote -->
+      <div class="p2-quote reveal-item">
+        <p>And somehow... these moments became my favourite memories.</p>
+      </div>
+
+      <div class="p2-cta-wrapper reveal-item">
+        <button class="cta-btn cta-light" id="toLetterBtn" aria-label="Read the letter">
+          <span class="cta-text">There's something I still want to tell you</span>
+          <span class="cta-arrow" aria-hidden="true">→</span>
+        </button>
+      </div>
+
+    </div><!-- /p2-container -->
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       LIGHTBOX
+  ═══════════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close photo viewer">✕</button>
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="" />
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE 3 — A LETTER
+  ═══════════════════════════════════════════ -->
+  <section class="page hidden" id="page3" aria-labelledby="p3-heading">
+
+    <div class="grain-overlay" aria-hidden="true"></div>
+    <div class="ambient-blob blob-6" aria-hidden="true"></div>
+    <div class="ambient-blob blob-7" aria-hidden="true"></div>
+
+    <div class="p3-container">
+
+      <header class="p3-header">
+        <p class="p1-eyebrow">03 / A Letter</p>
+        <h2 class="p3-heading" id="p3-heading" aria-label="A letter for you">For the girl who means more to me<br><em>than she probably knows.</em></h2>
+      </header>
+
+      <!-- Envelope -->
+      <div class="envelope-wrapper" id="envelopeWrapper">
+        <div class="envelope" id="envelope" aria-label="Sealed envelope">
+          <div class="envelope-body">
+            <!-- Envelope flap (top) -->
+            <div class="envelope-flap" id="envelopeFlap" aria-hidden="true">
+              <div class="flap-inner"></div>
+            </div>
+            <!-- Wax seal -->
+            <div class="wax-seal" id="waxSeal" aria-hidden="true">
+              <span class="seal-letter" aria-hidden="true">❤</span>
+            </div>
+            <!-- Bottom shadow lines -->
+            <div class="envelope-left-tri" aria-hidden="true"></div>
+            <div class="envelope-right-tri" aria-hidden="true"></div>
+            <div class="envelope-bottom-tri" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <button class="cta-btn" id="openLetterBtn" aria-label="Open the letter">
+          <span class="cta-text">Open my letter</span>
+          <span class="cta-arrow" aria-hidden="true">→</span>
+        </button>
+      </div>
+
+      <!-- Letter -->
+      <div class="letter-wrapper hidden" id="letterWrapper" aria-live="polite">
+        <div class="letter-paper" id="letterPaper">
+          <div class="letter-ruling" aria-hidden="true"></div>
+          <div class="letter-content" id="letterContent">
+            <!-- Populated by JS from CONFIG -->
+          </div>
+        </div>
+        <p class="letter-footer-note">
+          Made with love. Just for you. 🤍
+        </p>
+      </div>
+
+    </div><!-- /p3-container -->
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
